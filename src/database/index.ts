@@ -1,4 +1,11 @@
-import { createConnection } from "typeorm";
+import { createConnection, DataSource } from "typeorm";
 import ormConfig from "../ormconfig";
 
-createConnection(ormConfig);
+export default new DataSource({
+  type: "sqlite",
+  database: "./src/database.sqlite",
+  entities: ["./src/entities/**.ts"],
+  migrations: [
+    "./src/database/migrations/**.ts"
+  ]
+})

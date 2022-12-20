@@ -6,7 +6,7 @@ export class CreateSettings1671218084957 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: "Settings",
+                name: "settings",
                 columns: [
                     {
                         name: "id",
@@ -28,7 +28,7 @@ export class CreateSettings1671218084957 implements MigrationInterface {
                         default: "now()"
                     },
                     {
-                        name: "create_at",
+                        name: "created_at",
                         type: "timestamp",
                         default: "now()"
                     }

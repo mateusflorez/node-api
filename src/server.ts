@@ -1,18 +1,15 @@
 import express from "express";
-import "./database";
+
+import dataSource from "./database";
+import { routes } from "./routes";
 
 const app = express();
 
-app.get("/", (request, response) => {
-  return response.json({
-    message: "Hello world"
-  });
-});
+app.use(express.json());
 
-app.post("/", (request, response) => {
-  return response.json({
-    message: "Usuário salvo com sucesso"
-  });
-});
+app.use(routes);
 
-app.listen(3333, () => console.log("Server is running on port 3333"));
+app.listen(3333, async () => {
+  await dataSource.initialize();
+  console.log("Server is running on port 3333");
+});
