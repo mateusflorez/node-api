@@ -1,4 +1,4 @@
-import { DataSource, DataSourceOptions } from "typeorm";
+import { DataSourceOptions } from "typeorm";
 
 const connectionSource: DataSourceOptions = {
   type: "sqlite",

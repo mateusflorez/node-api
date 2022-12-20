@@ -1,5 +1,4 @@
-import { createConnection, DataSource } from "typeorm";
-import ormConfig from "../ormconfig";
+import { DataSource } from "typeorm";
 
 export default new DataSource({
   type: "sqlite",
